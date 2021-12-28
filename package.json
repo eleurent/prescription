@@ -1,5 +1,6 @@
 {
   "name": "prescription",
+  "homepage": "http://eleurent.github.io/prescription",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
