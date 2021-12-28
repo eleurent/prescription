@@ -50,47 +50,4 @@ class InputForm extends React.Component {
   }
 }
 
-class DateEvaluation extends React.Component {
-  state = {
-      natureActe: 'attouchement',
-      circAutorite: false,
-      circFonctions: false,
-      circCoaction: false,
-      circArme: false,
-      circBlessures: false,
-      dateOfBirth: null,
-      dateOfFacts: null,
-      isMinor: '?'
-  }
-
-  updateState() {
-    const today = new Date();
-    const majorDate = new Date(this.state.dateOfBirth);
-    majorDate.setFullYear(majorDate.getFullYear() + 18);
-    const isMinor = today < majorDate
-    this.setState({isMinor: isMinor});
-  }
-
-  handleChange = (event) => {
-    if (event.target.type == "checkbox") {
-      this.setState({[event.target.name]: event.target.checked}, () => {this.updateState();})
-    } else
-      this.setState({[event.target.name]: event.target.value}, () => {this.updateState();})
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-  }
-
-  render() {
-    const inputValues = this.state
-    return (
-      <div>
-      <InputForm onSubmit = {this.handleSubmit} onChange = {this.handleChange} inputValues = {inputValues}/>
-      <p>La victime est {this.state.isMinor == true ? "Mineure": (this.state.isMinor == false ? "Majeure" : this.state.isMinor)}</p>
-      </div>
-    )
-  }
-}
-
-export default DateEvaluation;
+export default InputForm;
