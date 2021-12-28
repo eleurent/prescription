@@ -175,9 +175,9 @@ const Node = (props) => {
 		return (
   		<Alert variant="primary">
   		<NewlineText text={ description + " " + law }/>
-  		<div className="d-flex justify-content-end">
-  		{ props.value }
-  		</div>
+  		{/* <div className="d-flex justify-content-end"> */}
+  		{/* { props.value } */}
+  		{/* </div> */}
   		</Alert>
 		);
 	}
