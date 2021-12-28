@@ -158,7 +158,9 @@ const nodes = {
 
 
 const fillTemplate = function(templateString, templateVars){
+    /*ignore jslint start*/
     return new Function("return `"+templateString +"`;").call(templateVars);
+    /*ignore jslint end*/
 }
 
 const Node = (props) => {
