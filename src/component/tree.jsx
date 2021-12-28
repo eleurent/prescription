@@ -72,7 +72,7 @@ const dateCheck_1_3 = (context) => {
   		return context.prescriptionDate;
 	}
 	else
-		return "prescriptionSocle";
+		return prescriptionSocle();
 };
 
 const dateCheck_1_4 = (context) => {
@@ -89,7 +89,7 @@ const dateCheck_1_4 = (context) => {
   		return context.prescriptionDate;
 	}
 	else
-		return "prescriptionSocle";
+		return prescriptionSocle();
 };
 
 const dateCheck_1_5 = (context) => {
@@ -103,7 +103,7 @@ const dateCheck_1_5 = (context) => {
 		return context.prescriptionDate;
 	}
 	else
-		return "prescriptionSocle6";
+		return prescriptionSocle6();
 };
 
 const nodes = {
@@ -136,7 +136,7 @@ const nodes = {
   	},
   	dateCheck_1_4: {
   		rule: dateCheck_1_4,
-  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.\n En application , le délai de prescription de l'action publique court jusqu'au ${context.prescriptionDate.toLocaleDateString()}.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.\nEn application, le délai de prescription de l'action publique court jusqu'au ${context.prescriptionDate.toLocaleDateString()}.`,
   		law: "Loi du 10 mars 2004, et loi du 5 avril 2006"
   	},
   	dateCheck_1_5: {
