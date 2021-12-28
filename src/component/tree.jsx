@@ -158,7 +158,7 @@ const nodes = {
 };
 
 function NewlineText(props) {
-  return props.text.split('\n').map(str => <p>{str}</p>);
+  return props.text.split('\n').map((str, idx) => <p key={idx}>{str}</p>);
 }
 
 const Node = (props) => {
