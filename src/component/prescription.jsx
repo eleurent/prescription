@@ -45,7 +45,6 @@ class Prescription extends React.Component {
     return (
       <div>
       <InputForm onSubmit = {this.handleSubmit} onChange = {this.handleChange} inputValues = {inputValues}/>
-      <p>La victime est {this.state.isMinor == true ? "Mineure": (this.state.isMinor == false ? "Majeure" : this.state.isMinor)}</p>
       <Tree inputValues = {inputValues}/>
       </div>
     )
