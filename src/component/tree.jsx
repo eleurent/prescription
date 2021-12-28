@@ -35,7 +35,7 @@ const dateCheck_1_1 = (context) => {
 
 const dateCheck_1_2 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
-	if (context.isMinor && context.circAutorite)
+	if (context.isMinor && (context.circAutorite || context.circFonctions))
 		return "dateCheck_1_2_1";
 	else
 		return "prescriptionSocle";
