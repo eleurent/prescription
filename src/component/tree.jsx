@@ -156,11 +156,8 @@ const nodes = {
   	},
 };
 
-
-const fillTemplate = function(templateString, templateVars){
-    /*ignore jslint start*/
-    return new Function("return `"+templateString +"`;").call(templateVars);
-    /*ignore jslint end*/
+function NewlineText(props) {
+  return props.text.split('\n').map(str => <p>{str}</p>);
 }
 
 const Node = (props) => {
