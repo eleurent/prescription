@@ -8,10 +8,11 @@ function datePlusYears(date, years) {
 	return date
 }
 
+
 const dateCheck_1 = (context) => {
 	const date = ("prescriptionDate" in context) ? context.prescriptionDate : context.dateOfFacts;
 	if (!date)
-		return "error";
+		return "missingDate";
 	if (date < new Date('1989-07-04')) {
 		return "dateCheck_1_1";
 	} else if (date < new Date('1998-06-18')) {
@@ -49,11 +50,11 @@ const dateCheck_1_2_1 = (context) => {
 }
 
 const prescriptionSocle = (context) => {
-  context.prescriptionDate = datePlusYears(context.dateOfFacts, 3);
+  return datePlusYears(context.dateOfFacts, 3);
 }
 
 const prescriptionSocle6 = (context) => {
-  context.prescriptionDate = datePlusYears(context.dateOfFacts, 6);
+  return datePlusYears(context.dateOfFacts, 6);
 }
 
 const dateCheck_1_3 = (context) => {
@@ -102,22 +103,68 @@ const dateCheck_1_5 = (context) => {
 };
 
 const nodes = {
-  	dateCheck_1: {rule: dateCheck_1},
-  	dateCheck_1_1: {rule: dateCheck_1_1},
-  	dateCheck_1_2: {rule: dateCheck_1_2},
-  	dateCheck_1_2_1: {rule: dateCheck_1_2_1},
-  	dateCheck_1_3: {rule: dateCheck_1_3},
-  	dateCheck_1_4: {rule: dateCheck_1_4},
-  	dateCheck_1_5: {rule: dateCheck_1_5},
-  	prescriptionSocle: {rule: prescriptionSocle},
-  	prescriptionSocle6: {rule: prescriptionSocle6},
+  	dateCheck_1: {
+  		rule: dateCheck_1,
+  		description: "Quelle est la date des faits?"
+  	},
+  	dateCheck_1_1: {
+  		rule: dateCheck_1_1,
+  		description: "Le ${this.dateOfFacts.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la date de la commission des faits.",
+  		law: "Loi du 31 décembre 1957 instituant le code de procédure pénale"
+  	},
+  	dateCheck_1_2: {
+  		rule: dateCheck_1_2,
+  		description: "",
+  		law: ""
+  	},
+  	dateCheck_1_2_1: {
+  		rule: dateCheck_1_2_1,
+  		description: ""
+  	},
+  	dateCheck_1_3: {
+  		rule: dateCheck_1_3,
+  		description: ""
+  	},
+  	dateCheck_1_4: {
+  		rule: dateCheck_1_4,
+  		description: ""
+  	},
+  	dateCheck_1_5: {
+  		rule: dateCheck_1_5,
+  		description: ""
+  	},
+  	prescriptionSocle: {
+  		rule: prescriptionSocle,
+  		description: ""
+  	},
+  	prescriptionSocle6: {
+  		rule: prescriptionSocle6,
+  		description: ""
+  	},
+  	missingDate: {
+  		description: "Erreur: dates manquantes."
+  	},
 };
 
+
+const fillTemplate = function(templateString, templateVars){
+    return new Function("return `"+templateString +"`;").call(templateVars);
+}
+
 const Node = (props) => {
-		let name = props.value;
-		if (name instanceof Date)
-			name = name.toString();
-  	return (<Alert variant="primary">{ name }</Alert>);
+		if (props.value instanceof Date)
+			return (<Alert variant="success">La prescription des faits apparait acquise / court jusqu'au : { props.value.toLocaleDateString() }</Alert>);
+  	else
+  		console.log(props.value);
+  		let law = nodes[props.value].law ? "(" + nodes[props.value].law + ")" : ""
+  		return (
+	  		<Alert variant="primary">
+	  		{ fillTemplate(nodes[props.value].description, props.inputValues) } { law }
+	  		<div className="d-flex justify-content-end">
+	  		{ props.value }
+	  		</div>
+	  		</Alert>
+  		);
 }
 
 class Tree extends React.Component {
@@ -133,7 +180,7 @@ class Tree extends React.Component {
   	let node = this.state.root;
   	path.push(node);
   	let depth = 0;
-  	while (node in nodes && depth < 20) {
+  	while (node in nodes && "rule" in nodes[node] && depth < 20) {
   		node = nodes[node].rule(context);
   		path.push(node);
   		depth++;
@@ -145,7 +192,7 @@ class Tree extends React.Component {
   	const path = this.traverse(this.props.inputValues);
   	console.log(path);
   	return (<div>
-   { path.map((node, idx) => <Node key={idx} value={node}/>) }
+   { path.map((node, idx) => <Node key={idx} value={node} inputValues={this.props.inputValues}/>) }
     </div>
   	)
   }
