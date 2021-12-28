@@ -117,26 +117,26 @@ const nodes = {
   	},
   	dateCheck_1_1: {
   		rule: dateCheck_1_1,
-  		description: `Le ${this.dateOfFacts.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la date de la commission des faits, soit le ${this.prescriptionDate.toLocaleDateString()}.`,
+  		description: (context) => `Le ${context.dateOfFacts.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la date de la commission des faits, soit le ${context.prescriptionDate.toLocaleDateString()}.`,
   		law: "Loi du 31 décembre 1957 instituant le code de procédure pénale"
   	},
   	dateCheck_1_2: {
   		rule: dateCheck_1_2,
-  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 14 juillet 1989, décision de la chambre criminelle du 2 décembre 1998"
   	},
   	dateCheck_1_2_1: {
   		rule: dateCheck_1_2_1,
-  		description: `En application de la loi précitée, le délai de prescription de l'action publique court jusqu'au ${this.prescriptionDate.toLocaleDateString()}.`
+  		description:  (context) => `En application de la loi précitée, le délai de prescription de l'action publique court jusqu'au ${context.prescriptionDate.toLocaleDateString()}.`
   	},
   	dateCheck_1_3: {
   		rule: dateCheck_1_3,
-  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 18 juin 1998, et loi du 19 mars 2003"
   	},
   	dateCheck_1_4: {
   		rule: dateCheck_1_4,
-  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004, et loi du 5 avril 2006"
   	},
   	dateCheck_1_5: {
@@ -164,20 +164,25 @@ const fillTemplate = function(templateString, templateVars){
 }
 
 const Node = (props) => {
-		if (props.value instanceof Date)
-			return (<Alert variant="success">La prescription des faits apparait acquise / court jusqu'au : { props.value.toLocaleDateString() }</Alert>);
-  	else
-  		if (nodes[props.value].description == null)
-  			return (null);
-  		let law = nodes[props.value].law ? "(" + nodes[props.value].law + ")" : ""
-  		return (
-	  		<Alert variant="primary">
-	  		{ fillTemplate(nodes[props.value].description, props.context) } { law }
-	  		<div className="d-flex justify-content-end">
-	  		{ props.value }
-	  		</div>
-	  		</Alert>
-  		);
+	if (props.value instanceof Date)
+		return (<Alert variant="success">La prescription des faits apparait acquise / court jusqu'au : { props.value.toLocaleDateString() }</Alert>);
+	else {
+		let description = nodes[props.value].description;
+		if (description == null)
+			return (null);
+		else if (description instanceof Function)
+			description = description(props.context);
+
+		let law = nodes[props.value].law ? "(" + nodes[props.value].law + ")" : ""
+		return (
+  		<Alert variant="primary">
+  		{ description } { law }
+  		<div className="d-flex justify-content-end">
+  		{ props.value }
+  		</div>
+  		</Alert>
+		);
+	}
 }
 
 class Tree extends React.Component {
