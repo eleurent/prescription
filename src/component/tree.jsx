@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Container from 'react-bootstrap/Container';
+import React from "react";
 import Alert from 'react-bootstrap/Alert';
 
 function datePlusYears(date, years) {
@@ -114,46 +113,46 @@ const nodes = {
   	},
   	dateCheck_1: {
   		rule: dateCheck_1,
-  		description: "Toutefois, les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai prescription de l'action publique (voir ci-dessous)."
+  		description: `Toutefois, les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai prescription de l'action publique (voir ci-dessous).`
   	},
   	dateCheck_1_1: {
   		rule: dateCheck_1_1,
-  		description: "Le ${this.dateOfFacts.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la date de la commission des faits, soit le ${this.prescriptionDate.toLocaleDateString()}.",
+  		description: `Le ${this.dateOfFacts.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la date de la commission des faits, soit le ${this.prescriptionDate.toLocaleDateString()}.`,
   		law: "Loi du 31 décembre 1957 instituant le code de procédure pénale"
   	},
   	dateCheck_1_2: {
   		rule: dateCheck_1_2,
-  		description: "Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.",
+  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 14 juillet 1989, décision de la chambre criminelle du 2 décembre 1998"
   	},
   	dateCheck_1_2_1: {
   		rule: dateCheck_1_2_1,
-  		description: "En application de la loi précitée, le délai de prescription de l'action publique court jusqu'au ${this.prescriptionDate.toLocaleDateString()}."
+  		description: `En application de la loi précitée, le délai de prescription de l'action publique court jusqu'au ${this.prescriptionDate.toLocaleDateString()}.`
   	},
   	dateCheck_1_3: {
   		rule: dateCheck_1_3,
-  		description: "Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.",
+  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 18 juin 1998, et loi du 19 mars 2003"
   	},
   	dateCheck_1_4: {
   		rule: dateCheck_1_4,
-  		description: "Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.",
+  		description: `Le ${this.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004, et loi du 5 avril 2006"
   	},
   	dateCheck_1_5: {
   		rule: dateCheck_1_5,
-  		description: ""
+  		description: ``
   	},
   	prescriptionSocle: {
   		rule: prescriptionSocle,
-  		description: ""
+  		description: null
   	},
   	prescriptionSocle6: {
   		rule: prescriptionSocle6,
-  		description: ""
+  		description: null
   	},
   	missingDate: {
-  		description: "Erreur: dates manquantes."
+  		description: `Erreur: dates manquantes.`
   	},
 };
 

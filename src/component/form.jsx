@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
+import React from "react";
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
@@ -42,9 +39,6 @@ class InputForm extends React.Component {
             <Form.Control name="dateOfFacts" type="date"  defaultValue={this.props.inputValues.dateOfFacts} onChange={this.props.handleChange}/>
           </Form.Group>
         </Row>
-        {/* <Button variant="primary" type="submit"> */}
-        {/*   Valider */}
-        {/* </Button> */}
       </Form>
     );
   }

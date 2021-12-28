@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import InputForm from './form.jsx'
 import Tree from './tree.jsx'
 
@@ -28,9 +28,9 @@ class Prescription extends React.Component {
   }
 
   handleChange = (event) => {
-    if (event.target.type == "checkbox") {
+    if (event.target.type === "checkbox") {
       this.setState({[event.target.name]: event.target.checked}, () => {this.updateState();})
-    } else if (event.target.type == "date") {
+    } else if (event.target.type === "date") {
       this.setState({[event.target.name]: event.target.valueAsDate}, () => {this.updateState();})
     } else
       this.setState({[event.target.name]: event.target.value}, () => {this.updateState();})
