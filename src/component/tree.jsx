@@ -263,7 +263,7 @@ const nodes = {
   	},
   	delit: {
   		rule: delit,
-  		description: `Les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai prescription de l'action publique (voir ci-dessous).`
+  		description: `Les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai de prescription de l'action publique (voir ci-dessous).`
   	},
   	delit_1: {
   		rule: delit_1,
@@ -272,7 +272,7 @@ const nodes = {
   	},
   	delit_2: {
   		rule: delit_2,
-  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait : \n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait\xa0: \n- par 3 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 3 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 14 juillet 1989, décision de la chambre criminelle du 2 décembre 1998"
   	},
   	delit_2_1: {
@@ -281,7 +281,7 @@ const nodes = {
   	},
   	delit_3: {
   		rule: delit_3,
-  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait : \n- par 3 ans à compter de la majorité de la victime mineure, ou\n- par 10 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entraîné des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait\xa0: \n- par 3 ans à compter de la majorité de la victime mineure, ou\n- par 10 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entraîné des blessures\n- par 3 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 18 juin 1998, et loi du 19 mars 2003"
   	},
   	delit_3_1: {
@@ -291,12 +291,12 @@ const nodes = {
   	},
   	delit_3_2: {
   		rule: delit_3_2,
-  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 10 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures ; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 10 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\xa0; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
   		law: ""
   	},
   	delit_4: {
   		rule: delit_4,
-  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait : \n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004, et loi du 5 avril 2006"
   	},
   	delit_4_1: {
@@ -306,12 +306,12 @@ const nodes = {
   	},
   	delit_4_2: {
   		rule: delit_4_2,
-  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures ; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confèrent ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\xa0; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
   		law: ""
   	},
   	delit_5: {
   		rule: delit_5,
-  		description: (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait :\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans \n- par 6 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+  		description: (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait\xa0:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans \n- par 6 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 1er mars 2017"
   	},
   	delit_5_1: {
@@ -321,7 +321,7 @@ const nodes = {
   	},
   	delit_5_2: {
   		rule: delit_5_2,
-  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans ; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans\xa0; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
   		law: ""
   	},
   	prescriptionSocle: {
@@ -347,27 +347,27 @@ const nodes = {
   	},
   	crime_2: {
   		rule: crime_2,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait : \n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 14 juillet 1989"
   	},
   	crime_3: {
   		rule: crime_3,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait : \n- par 10 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 18 juin 1998"
   	},
   	crime_4: {
   		rule: crime_4,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait : \n- par 20 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004"
   	},
   	crime_5: {
   		rule: crime_5,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait : \n- par 20 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 27 février 2017"
   	},
   	crime_6: {
   		rule: crime_6,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait : \n- par 30 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 30 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 3 aout 2018"
   	},
   	crime_prescriptionSocle10: {
