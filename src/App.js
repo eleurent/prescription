@@ -7,7 +7,7 @@ function App() {
   return (
   <Container className="p-3">
       <Container className="p-5 mb-4 bg-light rounded-3">
-        <h1 className="header">Calculateur de Prescription</h1>
+        <h1 className="header">Calculateur de prescription</h1>
         <Prescription />
       </Container>
     </Container>
