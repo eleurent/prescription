@@ -415,7 +415,7 @@ const RuleName = (props) => {
 
 const Node = (props) => {
 	if (props.value instanceof Date)
-		return (<Alert variant={props.context.prescriptionDate > new Date() ? "success" : "danger"}>La prescription des faits {props.context.prescriptionDate > new Date() ? "court jusqu'au" : "apparait acquise depuis le"} { props.value.toLocaleDateString() }</Alert>);
+		return (<Alert variant={props.context.prescriptionDate > new Date() ? "success" : "danger"}>La prescription des faits {props.context.prescriptionDate > new Date() ? "court jusqu'au" : "apparaît acquise depuis le"} { props.value.toLocaleDateString() }</Alert>);
 	else {
 		let description = nodes[props.value].description;
 		if (description == null)
