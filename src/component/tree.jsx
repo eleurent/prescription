@@ -66,9 +66,9 @@ const dateCheck_1_3 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
 	if (context.isMinor) {
     if (context.isMinor15 && (context.circAutorite || context.circFonctions || context.circCoaction || context.circArme || context.circBlessures)) {
-    	return "dateCheck_1_3_1";
+    	return "dateCheck_1_3_2";
 		} else {
-			return "dateCheck_1_3_2";
+			return "dateCheck_1_3_1";
 		}
 	}
 	else
@@ -77,7 +77,7 @@ const dateCheck_1_3 = (context) => {
 
 const dateCheck_1_3_1 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
-	context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 21);
 	if (context.prescriptionDate > new Date('2004-03-10'))
 		return "dateCheck_1";
 	else
@@ -86,7 +86,7 @@ const dateCheck_1_3_1 = (context) => {
 
 const dateCheck_1_3_2 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
-	context.prescriptionDate = datePlusYears(context.dateOfBirth, 21);
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
 	if (context.prescriptionDate > new Date('2004-03-10'))
 		return "dateCheck_1";
 	else
@@ -97,32 +97,59 @@ const dateCheck_1_4 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
 	if (context.isMinor) {
     if (context.isMinor15 && (context.circAutorite || context.circFonctions || context.circCoaction || context.circArme || context.circBlessures)) {
-    	context.prescriptionDate = datePlusYears(context.dateOfBirth, 38);
+    	return "dateCheck_1_4_2";
 		} else {
-			context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
+			return "dateCheck_1_4_1";
 		}
-		if (context.prescriptionDate > new Date('2017-03-01'))
-  		return "dateCheck_1";
-  	else
-  		return context.prescriptionDate;
 	}
 	else
 		return "prescriptionSocle";
 };
 
+const dateCheck_1_4_1 = (context) => {
+	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
+	if (context.prescriptionDate > new Date('2017-03-01'))
+		return "dateCheck_1";
+	else
+		return context.prescriptionDate;
+}
+
+const dateCheck_1_4_2 = (context) => {
+	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 38);
+	if (context.prescriptionDate > new Date('2017-03-01'))
+		return "dateCheck_1";
+	else
+		return context.prescriptionDate;
+}
+
+
 const dateCheck_1_5 = (context) => {
 	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
 	if (context.isMinor) {
     if (context.isMinor15) {
-    	context.prescriptionDate = datePlusYears(context.dateOfBirth, 38);
+    	return "dateCheck_1_5_2";
 		} else {
-			context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
+			return "dateCheck_1_5_1";
 		}
-		return context.prescriptionDate;
 	}
 	else
 		return "prescriptionSocle6";
 };
+
+const dateCheck_1_5_1 = (context) => {
+	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 28);
+	return context.prescriptionDate;
+}
+
+const dateCheck_1_5_2 = (context) => {
+	context.applicationDate = "prescriptionDate" in context ? context.prescriptionDate : context.dateOfFacts;
+	context.prescriptionDate = datePlusYears(context.dateOfBirth, 38);
+	return context.prescriptionDate;
+}
+
 
 const nodes = {
   	dateCheck_start: {
@@ -131,7 +158,7 @@ const nodes = {
   	},
   	dateCheck_1: {
   		rule: dateCheck_1,
-  		description: `Toutefois, les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai prescription de l'action publique (voir ci-dessous).`
+  		description: `Les faits n'étaient pas prescrits au moment de l'entrée en vigueur d'une nouvelle loi de réforme portant allongement du délai prescription de l'action publique (voir ci-dessous).`
   	},
   	dateCheck_1_1: {
   		rule: dateCheck_1_1,
@@ -154,23 +181,43 @@ const nodes = {
   	},
   	dateCheck_1_3_1: {
   		rule: dateCheck_1_3_1,
-  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la majorité de la victime mineure`,
-  		law: "Loi du 18 juin 1998, et loi du 19 mars 2003"
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 3 ans à compter de la majorité de la victime mineure, soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		law: ""
   	},
   	dateCheck_1_3_2: {
   		rule: dateCheck_1_3_2,
   		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 10 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
-  		law: "Loi du 18 juin 1998, et loi du 19 mars 2003"
+  		law: ""
   	},
   	dateCheck_1_4: {
   		rule: dateCheck_1_4,
   		description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures\n- par 3 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004, et loi du 5 avril 2006"
   	},
+  	dateCheck_1_4_1: {
+  		rule: dateCheck_1_4_1,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 10 ans à compter de la majorité de la victime mineure, soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		law: ""
+  	},
+  	dateCheck_1_4_2: {
+  		rule: dateCheck_1_4_2,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans, puisque les faits ont été commis par ascendant ou personne ayant autorité sur elle, ou par personne abusant de l'autorité que lui confère ses fonctions, ou par plusieurs personnes agissant en coaction, ou avec usage ou menace d'une arme, ou ayant entrainé des blessures; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		law: ""
+  	},
   	dateCheck_1_5: {
   		rule: dateCheck_1_5,
   		description: (context) => `Le ${context.applicationDate.toLocaleDateString()}, le délit d'agression sexuelle se prescrivait:\n- par 10 ans à compter de la majorité de la victime mineure, ou\n- par 20 ans à compter de la majorité de la victime agée de moins de 15 ans \n- par 6 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 1er mars 2017"
+  	},
+  	dateCheck_1_5_1: {
+  		rule: dateCheck_1_5_1,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 10 ans à compter de la majorité de la victime mineure, soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		law: ""
+  	},
+  	dateCheck_1_5_2: {
+  		rule: dateCheck_1_5_2,
+  		description:  (context) => `En application, le délit d'agression sexuelle se prescrivait par 20 ans à compter de la majorité de la victime agée de moins de 15 ans; soit le ${context.prescriptionDate.toLocaleDateString()}.`,
+  		law: ""
   	},
   	prescriptionSocle: {
   		rule: prescriptionSocle,
@@ -202,7 +249,7 @@ const RuleName = (props) => {
 
 const Node = (props) => {
 	if (props.value instanceof Date)
-		return (<Alert variant="success">La prescription des faits apparait acquise / court jusqu'au : { props.value.toLocaleDateString() }</Alert>);
+		return (<Alert variant="success">La prescription des faits {props.context.prescriptionDate > new Date() ? "court jusqu'au" : "apparait acquise depuis le"} : { props.value.toLocaleDateString() }</Alert>);
 	else {
 		let description = nodes[props.value].description;
 		if (description == null)
