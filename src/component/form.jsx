@@ -18,10 +18,10 @@ class InputForm extends React.Component {
           <Form.Check name="circAutorite" type="checkbox" label="Par personne ayant autorité ou ascendance sur la victime" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="circFonctions">
-          <Form.Check name="circFonctions" type="checkbox" label="Par personne abusant de l'autorité que lui confère ses fonctions" />
+          <Form.Check name="circFonctions" type="checkbox" label="Par personne abusant de l'autorité que lui confèrent ses fonctions" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="circCoaction">
-          <Form.Check name="circCoaction" type="checkbox" label="Par plusieurs personnes agissant en coaction" />
+          <Form.Check name="circCoaction" type="checkbox" label="Par plusieurs personnes agissant en qualité de coauteurs ou de complices" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="circArme">
           <Form.Check name="circArme" type="checkbox" label="Avec usage ou menace d'une arme" />

@@ -228,7 +228,7 @@ const nodes = {
   		description: (context) => `Le délit d'agression sexuelle se prescrivait à 6 ans à compter de la date de commission des faits, soit le ${context.prescriptionDate.toLocaleDateString()}.`
   	},
   	missingDate: {
-  		description: `Erreur: dates manquantes.`
+  		description: null
   	},
 };
 
