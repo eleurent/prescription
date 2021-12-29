@@ -22,7 +22,6 @@ class Prescription extends React.Component {
       const major15Date = new Date(this.state.dateOfBirth.getTime());
       majorDate.setFullYear(majorDate.getFullYear() + 18);
       major15Date.setFullYear(majorDate.getFullYear() + 15);
-      console.log("dateOfBirth update", this.state.dateOfBirth)
       this.setState({isMinor: this.state.dateOfFacts < majorDate, isMinor15: this.state.dateOfFacts < major15Date});
     }
   }
