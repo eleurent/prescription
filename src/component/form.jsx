@@ -11,7 +11,7 @@ class InputForm extends React.Component {
         <div className="alert alert-light" role="alert">
         Il convient dans un premier temps de déterminer la nature de l'acte que vous souhaitez dénoncer :
         <ul>
-          <li>Constitue une <mark>agression sexuelle</mark> le fait d'imposer à une personne un acte quelconque pouvant porter atteinte à son intégrité sexuelle ou à son intimité. Cette atteinte peut prendre des formes très diverses : attouchements sur les parties génitales, caresses sur le corps, baisers, frottement, déshabillement forcé... La jurisprudence exige que soit rapportée la preuve d'un contact physique, connoté sexuellement.</li>
+          <li>L'<mark>agression sexuelle</mark> constitue le fait d'imposer à une personne un acte quelconque pouvant porter atteinte à son intégrité sexuelle ou à son intimité. Cette atteinte peut prendre des formes très diverses : attouchements sur les parties génitales, caresses sur le corps, baisers, frottement, déshabillement forcé... La jurisprudence exige que soit rapportée la preuve d'un contact physique, connoté sexuellement.</li>
           <li>Le <mark>viol</mark> consiste dans tout acte de pénétration sexuelle, quelle qu'en soit la nature. Il peut s'agir de pénétration digitale, pénienne, linguale, ou à l'aide d'un objet, à l'intérieur du vagin, du rectum, ou de la bouche.</li>
           <li>Le <mark>rapport oro-génital</mark> consiste à mettre en contact le sexe d'une personne, et la bouche d'une autre personne (action de lécher, d'embrasser, etc). Attention, en cas de pénétration, il s'agit d'un viol.</li>
         </ul>
