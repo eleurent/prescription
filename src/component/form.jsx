@@ -47,7 +47,7 @@ class InputForm extends React.Component {
           <Form.Check name="circArme" type="checkbox" label="Avec usage ou menace d'une arme" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="circBlessures">
-          <Form.Check name="circBlessures" type="checkbox" label="Ayant entrainé des blessures" />
+          <Form.Check name="circBlessures" type="checkbox" label="Ayant entraîné des blessures" />
         </Form.Group>
         <h2>Dates</h2>
         <Row className="mb-3">
