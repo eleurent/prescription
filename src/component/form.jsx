@@ -8,7 +8,7 @@ class InputForm extends React.Component {
     return (
       <Form onSubmit={this.props.onSubmit} onChange={this.props.onChange}>
         <h2>Nature de l'acte</h2>
-        <div class="alert alert-light" role="alert">
+        <div className="alert alert-light" role="alert">
         Il convient dans un premier temps de déterminer la nature de l'acte que vous souhaitez dénoncer :
         <ul>
           <li>Constitue une <mark>agression sexuelle</mark> le fait d'imposer à une personne un acte quelconque pouvant porter atteinte à son intégrité sexuelle ou à son intimité. Cette atteinte peut prendre des formes très diverses : attouchements sur les parties génitales, caresses sur le corps, baisers, frottement, déshabillement forcé... La jurisprudence exige que soit rapportée la preuve d'un contact physique, connoté sexuellement.</li>
@@ -20,8 +20,16 @@ class InputForm extends React.Component {
         <Form.Group className="mb-3" controlId="natureActe">
           <Form.Label>Nature de l'acte</Form.Label>
           <Form.Select name="natureActe" aria-label="Nature de l'acte">
-            <option value="attouchement">Attouchement</option>
+            <option value="agression">Agression sexuelle</option>
             <option value="penetration">Pénétration</option>
+            <option value="orogenital">Acte oro-génital sans pénétration</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="natureActe">
+          <Form.Label>Commise sur</Form.Label>
+          <Form.Select name="commiseSur" aria-label="Commise sur">
+            <option value="auteur">La personne de l'auteur</option>
+            <option value="victime">La personne de la victime</option>
           </Form.Select>
         </Form.Group>
 

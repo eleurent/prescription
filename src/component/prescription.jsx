@@ -5,7 +5,8 @@ import Tree from './tree.jsx'
 
 class Prescription extends React.Component {
   state = {
-      natureActe: 'attouchement',
+      natureActe: 'agression',
+      commiseSur: 'auteur',
       circAutorite: false,
       circFonctions: false,
       circCoaction: false,
