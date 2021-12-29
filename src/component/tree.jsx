@@ -391,10 +391,10 @@ const nodes = {
   		description:  (context) => `En application, le crime de viol se prescrivait par 30 ans à compter de la majorité de la victime mineure, soit le ${context.prescriptionDate.toLocaleDateString()}.`,
   	},
   	missingDate: {
-  		description: "missing date"
+  		description: "Veuillez renseigner les dates."
   	},
   	error: {
-  		description: "Unknown type"
+  		description: "Type inconnu."
   	},
 };
 
