@@ -347,27 +347,27 @@ const nodes = {
   	},
   	crime_2: {
   		rule: crime_2,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure, lorsque les faits ont été commis par ascendant ou personne ayant autorité sur elle\n- par 10 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 14 juillet 1989"
   	},
   	crime_3: {
   		rule: crime_3,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 10 ans à compter de la majorité de la victime mineure\n- par 10 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 18 juin 1998"
   	},
   	crime_4: {
   		rule: crime_4,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 10 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 10 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 10 mars 2004"
   	},
   	crime_5: {
   		rule: crime_5,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 20 ans à compter de la majorité de la victime mineure\n- par 20 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 27 février 2017"
   	},
   	crime_6: {
   		rule: crime_6,
-      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 30 ans à compter de la majorité de la victime mineure\n- par 20 ans, à compter de la date de commission des faits s'agissant des autres cas.`,
+      description:  (context) => `Le ${context.applicationDate.toLocaleDateString()}, le crime de viol se prescrivait\xa0: \n- par 30 ans à compter de la majorité de la victime mineure\n- par 20 ans à compter de la date de commission des faits s'agissant des autres cas.`,
   		law: "Loi du 3 aout 2018"
   	},
   	crime_prescriptionSocle10: {
