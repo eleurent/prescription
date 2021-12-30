@@ -16,18 +16,20 @@ const RuleName = (props) => {
 }
 
 const Node = (props) => {
-	let law = props.node.law ? "(" + props.node.law + ")" : "";
+	const law = props.node.law ? "(" + props.node.law + ")" : "";
 	let description = props.node.description;
 	if (description && description instanceof Function)
 		description = description(props.context);
-	let alertComponent = (description) ? (
+	const alertComponent = (description) ? (
 		<Alert variant="primary">
-		<NewlineText text={ description + " " + law }/>
+		<NewlineText text={ description }/>
+		<RuleName name={ law } />
 		<RuleName name={ props.node.name } hidden/>
 		</Alert>
 	) : (null);
 	if (props.node.terminal && "prescriptionDate" in props.context) {
-		let terminalAlert = <Alert variant={props.context.prescriptionDate > new Date() ? "success" : "danger"}>La prescription des faits {props.context.prescriptionDate > new Date() ? "court jusqu'au" : "apparaît acquise depuis le"} { props.context.prescriptionDate.toLocaleDateString() }</Alert>
+		const prescriptionRunning = props.context.prescriptionDate > new Date();
+		const terminalAlert = <Alert variant={ prescriptionRunning ? "success" : "danger"}>La prescription des faits {prescriptionRunning ? "court jusqu'au" : "apparaît acquise depuis le"} { props.context.prescriptionDate.toLocaleDateString() }.</Alert>
 		return [alertComponent, terminalAlert];
 	} else {
 		return alertComponent;
