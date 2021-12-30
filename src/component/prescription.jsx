@@ -1,7 +1,7 @@
 import React from "react";
 import InputForm from './form.jsx'
-import Tree from './tree.jsx'
-
+import Path from './path.jsx'
+import prescriptionGraph from '../backend/rules'
 
 class Prescription extends React.Component {
   state = {
@@ -41,11 +41,11 @@ class Prescription extends React.Component {
   }
 
   render() {
-    const inputValues = this.state
+    const path = prescriptionGraph.traverse(this.state);
     return (
       <div>
-      <InputForm onSubmit = {this.handleSubmit} onChange = {this.handleChange} inputValues = {inputValues}/>
-      <Tree inputValues = {inputValues}/>
+      <InputForm onSubmit = {this.handleSubmit} onChange = {this.handleChange} inputValues = {this.state}/>
+      <Path path = {path}/>
       </div>
     )
   }
