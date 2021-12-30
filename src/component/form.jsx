@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 class InputForm extends React.Component {
   render() {
     let commiseSurComponent = (null);
-    if (this.props.inputValues.natureActe == "penetration") {
+    if (this.props.inputValues.natureActe === "penetration") {
       commiseSurComponent = (
         <Form.Group className="mb-3" controlId="natureActe">
           <Form.Label>Commise sur</Form.Label>
