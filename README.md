@@ -1,6 +1,6 @@
 # Calculateur de prescription
 
-Calculateur de prescription de l'action publique du viol et de l'infraction sexuelle.
+[Calculateur de prescription](https://eleurent.github.io/prescription/) de l'action publique du viol et de l'infraction sexuelle.
 
 ## Fonctionnement
 
