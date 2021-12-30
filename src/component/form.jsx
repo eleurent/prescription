@@ -5,6 +5,19 @@ import Col from 'react-bootstrap/Col';
 
 class InputForm extends React.Component {
   render() {
+    let commiseSurComponent = (null);
+    if (this.props.inputValues.natureActe == "penetration") {
+      commiseSurComponent = (
+        <Form.Group className="mb-3" controlId="natureActe">
+          <Form.Label>Commise sur</Form.Label>
+          <Form.Select name="commiseSur" aria-label="Commise sur">
+            <option value="auteur">La personne de l'auteur</option>
+            <option value="victime">La personne de la victime</option>
+          </Form.Select>
+        </Form.Group>
+      );
+    }
+
     return (
       <Form onSubmit={this.props.onSubmit} onChange={this.props.onChange}>
         <h2>Nature de l'acte</h2>
@@ -25,13 +38,7 @@ class InputForm extends React.Component {
             <option value="orogenital">Acte oro-génital sans pénétration</option>
           </Form.Select>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="natureActe">
-          <Form.Label>Commise sur</Form.Label>
-          <Form.Select name="commiseSur" aria-label="Commise sur">
-            <option value="auteur">La personne de l'auteur</option>
-            <option value="victime">La personne de la victime</option>
-          </Form.Select>
-        </Form.Group>
+        { commiseSurComponent }
 
         <h2>Circonstances</h2>
         <Form.Group className="mb-3" controlId="circAutorite">
