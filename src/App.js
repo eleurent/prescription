@@ -12,7 +12,7 @@ function App() {
     </Container>
   <footer>
     <div className="text-center p-4 bg-white">
-    <a href="https://github.com/eleurent/prescription">Logiciel libre</a> développé en 2021 par Edouard Leurent et Ambroise Collon.
+    <a href="https://github.com/eleurent/prescription">Logiciel libre</a> développé en 2021 par Edouard Leurent et Ambroise Laffineur.
   </div>
   </footer>
   </Container>
