@@ -17,20 +17,20 @@ class Graph {
   };
 
   traverse(data) {
-  	let path = [];
-  	let context = {...data};
-  	let node = {...this.root};
-  	while (node) {
+    let path = [];
+    let context = {...data};
+    let node = {...this.root};
+    while (node) {
       let next = ("rule" in node) ? node.rule(context) : null;
-    	path.push({node: node, context: {...context}});
-    	if (this.nodes.has(next))
+      path.push({node: node, context: {...context}});
+      if (this.nodes.has(next))
         node = {...this.nodes.get(next)};
       else {
         node.terminal = true;
         node = null;
       }
-  	}
-  	return path
+    }
+    return path
   }
 }
 
