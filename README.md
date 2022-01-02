@@ -1,6 +1,4 @@
-# Calculateur de prescription de l'action publique des infractions en matière de sexualité en droit pénal français. 
-
-[Calculateur de prescription](https://eleurent.github.io/prescription/) de l'action publique du viol et de l'agression sexuelle.
+# [Calculateur de prescription](https://eleurent.github.io/prescription/) de l'action publique des infractions en matière de sexualité en droit pénal français. 
 
 ## Notions
 
