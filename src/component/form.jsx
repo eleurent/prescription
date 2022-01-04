@@ -20,8 +20,9 @@ class InputForm extends React.Component {
 
     return (
       <Form onSubmit={this.props.onSubmit} onChange={this.props.onChange}>
-        <h2>Nature de l'acte</h2>
-        <div className="alert alert-light" role="alert">
+        <h4>Nature de l'acte</h4>
+        {/* <div className="alert alert-light" role="alert"> */}
+        <p>
         Il convient dans un premier temps de déterminer la nature de l'acte que vous souhaitez dénoncer :
         <ul>
           <li>L'<mark>agression sexuelle</mark> constitue le fait d'imposer à une personne un acte quelconque pouvant porter atteinte à son intégrité sexuelle ou à son intimité. Cette atteinte peut prendre des formes très diverses : attouchements sur les parties génitales, caresses sur le corps, baisers, frottement, déshabillement forcé... La jurisprudence exige que soit rapportée la preuve d'un contact physique, connoté sexuellement.</li>
@@ -29,7 +30,8 @@ class InputForm extends React.Component {
           <li>Le <mark>rapport bucco-génital</mark> consiste à mettre en contact le sexe d'une personne, et la bouche d'une autre personne (action de lécher, d'embrasser, etc). Attention, en cas de pénétration, il s'agit d'un viol.</li>
         </ul>
         On distinguera le cas où l'acte de pénétration a été commis sur la personne de l'auteur (par exemple : une personne pratique une fellation sur une victime non consentante), ou sur la personne de la victime (cas le plus courant, c'est alors la victime qui est visée par l'acte de pénétration). 
-        </div>
+        </p>
+        {/* </div> */}
         <Form.Group className="mb-3" controlId="natureActe">
           <Form.Label>Nature de l'acte</Form.Label>
           <Form.Select name="natureActe" aria-label="Nature de l'acte">
@@ -40,7 +42,7 @@ class InputForm extends React.Component {
         </Form.Group>
         { commiseSurComponent }
 
-        <h2>Circonstances</h2>
+        <h4>Circonstances</h4>
         <Form.Group className="mb-3" controlId="circAutorite">
           <Form.Check name="circAutorite" type="checkbox" label="Par personne ayant autorité ou ascendance sur la victime" />
         </Form.Group>
@@ -56,8 +58,8 @@ class InputForm extends React.Component {
         <Form.Group className="mb-3" controlId="circBlessures">
           <Form.Check name="circBlessures" type="checkbox" label="Ayant entraîné des blessures" />
         </Form.Group>
-        <h2>Dates</h2>
-        <Row className="mb-3">
+        <h4>Dates</h4>
+        <Row className="mb-3 align-items-end">
           <Col>
           <Form.Group controlId="dateOfBirth">
             <Form.Label>Date de naissance de la victime</Form.Label>

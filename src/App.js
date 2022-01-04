@@ -5,17 +5,20 @@ import Prescription from './component/prescription.jsx'
 
 function App() {
   return (
-  <Container className="p-3">
-    <Container className="p-5 mb-4 bg-light rounded-3">
-      <h1 className="header">Calculateur de prescription</h1>
+  <div className="bg-light">
+    <Container>
+      <div className="py-5 text-center">
+        <h2>Calculateur de prescription</h2>
+        <p className="lead">de l'action publique des infractions en matière de sexualité en droit pénal français</p>
+      </div>
       <Prescription />
+      <footer>
+        <div className="text-center p-4">
+        <a href="https://github.com/eleurent/prescription">Logiciel libre</a> développé en 2021 par Edouard Leurent et Ambroise Laffineur.
+        </div>
+      </footer>
     </Container>
-  <footer>
-    <div className="text-center p-4 bg-white">
-    <a href="https://github.com/eleurent/prescription">Logiciel libre</a> développé en 2021 par Edouard Leurent et Ambroise Laffineur.
   </div>
-  </footer>
-  </Container>
   );
 }
 
