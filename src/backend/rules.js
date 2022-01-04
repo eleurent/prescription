@@ -18,7 +18,7 @@ const natureCheck = new Node({
                 default:
                     return "typeError";
               }
-            case "orogenital":
+            case "buccogenital":
                 if (!context.dateOfFacts)
                 return "missingDate";
                 return context.dateOfFacts < new Date('2021-04-21') ? "delit" : "crime";
