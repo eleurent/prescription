@@ -21,8 +21,8 @@ class Prescription extends React.Component {
     if (this.state.dateOfBirth && this.state.dateOfFacts) {
       const majorDate = new Date(this.state.dateOfBirth.getTime());
       const major15Date = new Date(this.state.dateOfBirth.getTime());
-      majorDate.setFullYear(majorDate.getFullYear() + 18);
-      major15Date.setFullYear(majorDate.getFullYear() + 15);
+      majorDate.setFullYear(this.state.dateOfBirth.getFullYear() + 18);
+      major15Date.setFullYear(this.state.dateOfBirth.getFullYear() + 15);
       this.setState({isMinor: this.state.dateOfFacts < majorDate, isMinor15: this.state.dateOfFacts < major15Date});
     }
   }
